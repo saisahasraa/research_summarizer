@@ -1,7 +1,11 @@
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configure with your key
-genai.configure(api_key="AIzaSyDo34CgnUM1BGN9_Mo2TM-VTCRx698p5q4")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 class SummaryGenerationAgent:
     def __init__(self):
